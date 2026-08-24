@@ -1,0 +1,13 @@
+# 원본 대용량 bugreport와 재생성 가능한 로컬 인덱스
+real-bugreports/*.zip
+real-bugreports/*.sqlite3
+real-bugreports/*.sqlite3-*
+
+# Python 캐시/로컬 환경
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 임시 파일
+*.tmp-*

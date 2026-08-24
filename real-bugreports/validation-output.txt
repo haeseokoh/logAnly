@@ -1,0 +1,201 @@
+COMMAND: python -m unittest -v test_bugreport_index.py
+RESULT: 2 tests OK
+COMMAND: python bugreport_index.py index . --db bugreports.sqlite3
+RESULT: reports=3 chunks=8708 fts5=on
+ZIP_SHA256_BEFORE 1CACB810DBDE1AD2F9C08DAD3957118D365AD0BDDF7C2F6895DF142E5CD7AC53 bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip
+ZIP_SHA256_BEFORE 852ECCFA6C0DD383749BD3CF465F1155AF5A34C03C6FB2073F281B8BDE5FB0D0 bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip
+ZIP_SHA256_BEFORE 117072E712E5129DAD99903202B2FBB440203072B565ADD8FA6CC7EA1368C105 bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip
+COMMAND: stats
+{"zip_name": "bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip", "main_entry": "bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.txt", "main_size": 26376972, "chunk_count": 2664, "indexed_at": "2026-08-24T15:23:12.856275+00:00"}
+{"zip_name": "bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip", "main_entry": "bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt", "main_size": 72897790, "chunk_count": 3906, "indexed_at": "2026-08-24T15:23:19.713919+00:00"}
+{"zip_name": "bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip", "main_entry": "bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.txt", "main_size": 21652777, "chunk_count": 2138, "indexed_at": "2026-08-24T15:23:37.876267+00:00"}
+{"reports": 3, "chunks": 8708}
+COMMAND: search FATAL EXCEPTION
+
+[1] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:14649-14649 (chunk=2742, seq=78)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=log
+--------- beginning of crash
+
+[2] MATCH bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:14650-15049 (chunk=2743, seq=79)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=stack | timestamp_start=03-26 12:19:49.863 | process=AndroidRuntime | pid=9459,9485,9544,9566,9589,9612,9635,9657,9680,9702,9726 | severity=E | stack=yes
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: FATAL EXCEPTION: main
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: Process: com.google.android.apps.nexuslauncher, PID: 9459
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: java.lang.ExceptionInInitializerError
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.config.FeatureFlags.<clinit>(Unknown Source:18)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.uioverrides.QuickstepLauncher.registerBackDispatcher(Unknown Source:0)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.BaseActivity.onCreate(Unknown Source:3)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.BaseDraggingActivity.onCreate(Unknown Source:0)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.statemanager.StatefulActivity.onCreate(Unknown Source:0)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.Launcher.onCreate(Unknown Source:76)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.android.launcher3.uioverrides.QuickstepLauncher.onCreate(Unknown Source:0)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onCreate(Unknown Source:0)
+03-26 12:19:49.863 10252  9459  9459 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8621)
+... (preview truncated)
+
+[3] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15050-15053 (chunk=2744, seq=80)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=log | timestamp_start=03-26 12:19:55.365 | process=AndroidRuntime | pid=9726 | severity=E
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8248)
+
+[4] MATCH bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15054-15462 (chunk=2745, seq=81)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=stack | timestamp_start=03-26 12:19:55.365 | process=AndroidRuntime | pid=9726,9748,9770,9792,9814,9841,9895,9920,9952,9975,9999,10021 | severity=E | stack=yes
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission denial: reading from settings requires:android.permission.READ_DEVICE_CONFIG
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.Settings$Config.enforceReadPermission(Settings.java:19463)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.Settings$NameValueCache.getStringsForPrefix(Settings.java:3473)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.Settings$Config.getStrings(Settings.java:19175)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.Settings$Config.getStrings(Settings.java:19152)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.DeviceConfig.getProperties(DeviceConfig.java:1064)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.DeviceConfig.getProperty(DeviceConfig.java:1037)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at android.provider.DeviceConfig.getBoolean(DeviceConfig.java:1100)
+03-26 12:19:55.365 10252  9726  9726 E AndroidRuntime: 	at com.android.launcher3.uioverrides.flags.FlagsFactory.getReleaseFlag(Unknown Source:18)
+... (preview truncated)
+
+[5] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15463-15471 (chunk=2746, seq=82)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=log | timestamp_start=03-26 12:19:56.269 | process=AndroidRuntime | pid=10021 | severity=E
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3963)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:103)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:139)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:96)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2468)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8248)
+
+[6] MATCH bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15472-15880 (chunk=2747, seq=83)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=stack | timestamp_start=03-26 12:19:56.269 | process=AndroidRuntime | pid=10021,10043,10065,10089,10114,10137,10159,10182,10206,10228,10252,10276 | severity=E | stack=yes
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission denial: reading from settings requires:android.permission.READ_DEVICE_CONFIG
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.Settings$Config.enforceReadPermission(Settings.java:19463)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.Settings$NameValueCache.getStringsForPrefix(Settings.java:3473)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.Settings$Config.getStrings(Settings.java:19175)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.Settings$Config.getStrings(Settings.java:19152)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.DeviceConfig.getProperties(DeviceConfig.java:1064)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.DeviceConfig.getProperty(DeviceConfig.java:1037)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at android.provider.DeviceConfig.getBoolean(DeviceConfig.java:1100)
+03-26 12:19:56.269 10252 10021 10021 E AndroidRuntime: 	at com.android.launcher3.uioverrides.flags.FlagsFactory.getReleaseFlag(Unknown Source:18)
+... (preview truncated)
+
+[7] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15881-15889 (chunk=2748, seq=84)
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=log | timestamp_start=03-26 12:19:57.155 | process=AndroidRuntime | pid=10276 | severity=E
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3963)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:103)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:139)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:96)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2468)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+03-26 12:19:57.155 10252 10276 10276 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8248)
+
+matched=3 expanded=7 context=1
+COMMAND: search ANR
+
+[1] CONTEXT bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip::bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.txt:74492-74525 (chunk=1254, seq=1254)
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_47lID9: 2023-02-03 20:12:50) | kind=stack | timestamp_start=2023-02-03 20:12:50.735992076 | process=com.google.android.ims | pid=3413 | stack=yes
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:161)
+  at android.os.Looper.loop(Looper.java:288)
+  at android.os.HandlerThread.run(HandlerThread.java:67)
+
+----- end 3413 -----
+
+... (preview truncated)
+
+[2] MATCH bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip::bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.txt:74526-74528 (chunk=1255, seq=1255)
+    section=ANR FILES (ls -lt /data/anr/) | kind=section
+------ ANR FILES (ls -lt /data/anr/) ------
+total 0
+------ 0.005s was the duration of 'ANR FILES' ------
+
+[3] CONTEXT bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip::bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.txt:74529-74555 (chunk=1256, seq=1256)
+    section=NETWORK DEV INFO (/proc/net/dev) | kind=section
+------ NETWORK DEV INFO (/proc/net/dev) ------
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+rmnet_data1:     912      10    0    0    0     0          0         0      828      12    0    0    0     0       0          0
+ wlan0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rmnet_data5:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+wifi-aware0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+r_rmnet_data2:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+... (preview truncated)
+
+[4] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:131640-131948 (chunk=3421, seq=757)
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_HR4Jlt: 2024-03-26 22:45:10) | kind=stack | timestamp_start=2024-03-26 22:45:09.696622534 | process=com.google.android.googlequicksearchbox:search | pid=29782 | stack=yes
+#1 java.lang.BootClassLoader: [], no parent
+#2 dalvik.system.PathClassLoader: [/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes13.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes12.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes11.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes10.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes6.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes5.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes3.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes2.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes8.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes4.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes9.dex:/data/app/~~yrTNQt-54FefsnJTPiAcYw==/com.google.android.googlequicksearchbox-y8CaqR3x1XTPapuynF6nzA==/base.apk!classes7.dex], parent #1
+#3 dalvik.system.DelegateLastClassLoader: [/data/user_de/0/com.google.android.gms/app_chimera/m/0000000f/DynamiteLoader.apk:/data/user_de/0/com.google.android.gms/app_chimera/m/0000000f/DynamiteLoader.apk!classes2.dex], parent #0
+#4 dalvik.system.DelegateLastClassLoader: [/data/app/~~ZLtY56lzWHUPgatmWyHn1w==/com.google.android.gms-mrfX5KB6lLTITsNX_yK_OQ==/split_GoogleCertificates.apk:/data/app/~~ZLtY56lzWHUPgatmWyHn1w==/com.google.android.gms-mrfX5KB6lLTITsNX_yK_OQ==/split_GoogleCertificates.apk!classes2.dex], parent #2
+#5 dalvik.system.DelegateLastClassLoader: [/data/user_de/0/com.google.android.gms/app_chimera/m/0000000e/CronetDynamite.apk], parent #2
+Done dumping class loaders
+Classes initialized: 0 in 0
+Intern table: 90421 strong; 1313 weak
+... (preview truncated)
+
+[5] MATCH bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:131949-131954 (chunk=3422, seq=758)
+    section=ANR FILES (ls -lt /data/anr/) | kind=section
+------ ANR FILES (ls -lt /data/anr/) ------
+total 28
+-rw-rw---- 1 tombstoned system 26953 2024-03-20 18:37 trace_00
+------ 0.016s was the duration of 'ANR FILES' ------
+*** NO TOMBSTONES to dump in /data/tombstones/
+
+
+[6] CONTEXT bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:131955-131981 (chunk=3423, seq=759)
+    section=NETWORK DEV INFO (/proc/net/dev) | kind=section
+------ NETWORK DEV INFO (/proc/net/dev) ------
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+ wlan0: 1575796972 1332924    0    0    0     0          0         0 94225705  398054    0    0    0     0       0          0
+rmnet_data5:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rmnet_data0:    5322      52    0    0    0     0          0         0     2761      40    0    0    0     0       0          0
+ip_vti0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rmnet_data4:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+... (preview truncated)
+
+[7] CONTEXT bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip::bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.txt:54647-54922 (chunk=7160, seq=590)
+    section=VM TRACES JUST NOW (/data/anr/dumptrace_AHOJ2N: 2022-12-23 04:52:43) | kind=stack | timestamp_start=2022-12-23 04:52:43 | process=com.google.android.projection.gearhead:car | pid=6252 | stack=yes
+  at java.lang.Object.wait(Native method)
+  - waiting on <0x0617a97a> (a java.lang.Class<java.lang.ref.ReferenceQueue>)
+  at java.lang.Object.wait(Object.java:442)
+  at java.lang.Object.wait(Object.java:568)
+  at java.lang.Daemons$ReferenceQueueDaemon.runInternal(Daemons.java:217)
+  - locked <0x0617a97a> (a java.lang.Class<java.lang.ref.ReferenceQueue>)
+  at java.lang.Daemons$Daemon.run(Daemons.java:139)
+  at java.lang.Thread.run(Thread.java:923)
+... (preview truncated)
+
+[8] MATCH bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip::bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.txt:54923-54928 (chunk=7161, seq=591)
+    section=ANR FILES (ls -lt /data/anr/) | kind=section
+------ ANR FILES (ls -lt /data/anr/) ------
+total 4772
+-rw-rw-rw- 1 root root 1533541 2022-12-23 04:52 dumptrace_AHOJ2N
+-rw-rw-rw- 1 root root 1699055 2022-12-23 04:50 dumptrace_1Liegn
+-rw-rw-rw- 1 root root 1645430 2022-12-23 04:45 dumptrace_Axz9T7
+------ 0.082s was the duration of 'ANR FILES' ------
+
+[9] CONTEXT bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip::bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.txt:54929-54956 (chunk=7162, seq=592)
+    section=NETWORK DEV INFO (/proc/net/dev) | kind=section
+------ NETWORK DEV INFO (/proc/net/dev) ------
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+rev_rmnet1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rmnet6:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rev_rmnet5:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+rmnet1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+... (preview truncated)
+
+matched=3 expanded=9 context=1
+ZIP_SHA256_AFTER  1CACB810DBDE1AD2F9C08DAD3957118D365AD0BDDF7C2F6895DF142E5CD7AC53 bugreport-bramble-TQ1A.221205.011-2023-02-03-20-12-41.zip
+ZIP_SHA256_AFTER  852ECCFA6C0DD383749BD3CF465F1155AF5A34C03C6FB2073F281B8BDE5FB0D0 bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip
+ZIP_SHA256_AFTER  117072E712E5129DAD99903202B2FBB440203072B565ADD8FA6CC7EA1368C105 bugreport-kltetmo-RQ3A.211001.001-2022-12-23-04-52-20.zip
+EXIT fatal=0 anr=0

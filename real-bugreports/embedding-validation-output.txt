@@ -1,0 +1,122 @@
+embedded: 400/8708 (4.6%)
+embedded: 800/8708 (9.2%)
+embedded: 1200/8708 (13.8%)
+embedded: 1600/8708 (18.4%)
+embedded: 2000/8708 (23.0%)
+embedded: 2400/8708 (27.6%)
+embedded: 2800/8708 (32.2%)
+embedded: 3200/8708 (36.7%)
+embedded: 3600/8708 (41.3%)
+embedded: 4000/8708 (45.9%)
+embedded: 4400/8708 (50.5%)
+embedded: 4800/8708 (55.1%)
+embedded: 5200/8708 (59.7%)
+embedded: 5600/8708 (64.3%)
+embedded: 6000/8708 (68.9%)
+embedded: 6400/8708 (73.5%)
+embedded: 6800/8708 (78.1%)
+embedded: 7200/8708 (82.7%)
+embedded: 7600/8708 (87.3%)
+embedded: 8000/8708 (91.9%)
+embedded: 8400/8708 (96.5%)
+embedded: 8708/8708 (100.0%)
+hybrid database: C:\project\Codex\logAnly\real-bugreports\bugreports-hybrid.sqlite3 | model=embeddinggemma:latest | dimensions=768 | embeddings=8708 | total=738.36s
+--- HYBRID SEARCH ---
+
+[1] HYBRID bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:14649-14649
+    section=SYSTEM LOG (logcat -v threadtime -v printable -v uid -d *:v) / crash | kind=log | process= | severity=
+--------- beginning of crash
+
+[2] HYBRID bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:127764-128210
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_HR4Jlt: 2024-03-26 22:45:10) | kind=stack | process= | severity=
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8248)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+... (preview truncated)
+
+[3] HYBRID bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:126299-126704
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_HR4Jlt: 2024-03-26 22:45:10) | kind=stack | process= | severity=
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8248)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+... (preview truncated)
+
+[4] HYBRID bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:130603-131002
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_HR4Jlt: 2024-03-26 22:45:10) | kind=stack | process= | severity=
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8248)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+... (preview truncated)
+
+[5] HYBRID bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:127167-127566
+    section=VM TRACES JUST NOW (/data/user_de/0/com.android.shell/files/bugreports/dumptrace_HR4Jlt: 2024-03-26 22:45:10) | kind=stack | process= | severity=
+  at android.os.MessageQueue.nativePollOnce(Native method)
+  at android.os.MessageQueue.next(MessageQueue.java:335)
+  at android.os.Looper.loopOnce(Looper.java:162)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8248)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+... (preview truncated)
+
+matched=5 retrieval=FTS+embedding-RRF model=embeddinggemma:latest
+HYBRID_EXIT=0
+--- HYBRID ASK ---
+모델: gemma4:e4b
+
+제공된 근거를 바탕으로 분석한 결과는 다음과 같습니다.
+
+**프로세스 및 오류 원인 분석:**
+
+1.  **종료된 프로세스:**
+    *   여러 PID(9726, 9748, 10021, 10768, 10789 등)에서 `AndroidRuntime` 관련 `FATAL EXCEPTION`이 발생했습니다.
+    *   이 오류들은 주로 `com.android.launcher3`와 관련된 프로세스(`com.google.android.apps.nexuslauncher` 등)에서 발생했습니다 [S2], [S5].
+
+2.  **오류의 직접적인 원인:**
+    *   모든 주요 크래시 로그에서 공통적으로 `java.lang.SecurityException: Permission denial: reading from settings requires:android.permission.READ_DEVICE_CONFIG`가 발생했습니다 [S2], [S5].
+    *   이 예외는 `android.provider.Settings$Config.enforceReadPermission(Settings.java:19463)` 호출 지점에서 발생했습니다 [S2], [S5].
+
+3.  **오류 발생 지점 (코드 흐름):**
+    *   크래시는 애플리케이션이 시스템 설정(Settings) 정보에 접근하려 할 때 발생했습니다.
+    *   구체적으로 `android.provider.DeviceConfig.getProperties(DeviceConfig.java:1064)` 또는 `android.provider.DeviceConfig.getProperty(DeviceConfig.java:1037)`와 같은 시스템 설정 읽기 함수를 호출하는 과정에서 권한 검사를 통과하지 못했기 때문입니다 [S2], [S5].
+    *   이러한 설정 읽기 시도는 `com.android.launcher3.uioverrides.flags.FlagsFactory` 클래스의 정적 초기화 블록(`.<clinit>`)에서 발생한 것으로 보입니다 [S2], [S5].
+
+**결론:**
+
+*   **원인 후보:** 해당 프로세스(주로 런처 관련)가 **`android.permission.READ_DEVICE_CONFIG` 권한 없이** 시스템 설정(Settings)의 장치 구성(DeviceConfig) 정보를 읽으려고 시도했기 때문입니다.
+*   **확정 사실:** 프로세스가 `READ_DEVICE_CONFIG` 권한 부족으로 인해 `SecurityException`을 발생시키며 종료된 것은 사실입니다 [S2], [S5].
+
+**실용적인 다음 확인 항목:**
+
+1.  **권한 확인:** 해당 코드를 실행하는 애플리케이션(또는 해당 기능을 사용하는 컴포넌트)이 **`android.permission.READ_DEVICE_CONFIG` 권한을 Manifest 파일에 선언했는지** 확인해야 합니다.
+2.  **권한 요청 시점 확인:** 만약 해당 권한이 민감하여 런타임에 사용자 동의가 필요한 경우라면, 해당 권한을 요청하는 로직이 적절한 시점(예: 사용자 인터랙션 이후)에 호출되고 있는지 확인해야 합니다.
+3.  **코드 수정 검토:** 만약 해당 기능이 반드시 필요한 것이 아니라면, `FlagsFactory`와 같이 정적 초기화 블록에서 시스템 설정을 읽는 로직을 제거하거나, 해당 설정을 읽는 부분을 **권한 체크 로직을 우회하거나 대체할 수 있는 방법**으로 수정해야 합니다.
+
+검색 근거 출처:
+- [S1] bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15050-15053
+- [S2] bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15054-15462
+- [S3] bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:15463-15471
+- [S4] bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:16717-16725
+- [S5] bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.zip::bugreport-bramble-UQ1A.240205.004-2024-03-26-22-44-59.txt:16726-17134
+ASK_EXIT=0
+INTEGRITY ok
+COUNTS (8708, 8708)
+VECTOR ('embeddinggemma:latest', 768, 3072, 3072)
+error: 기존 DB 보호를 위해 --output은 --db와 다른 경로여야 합니다.
+SAME_PATH_EXIT=2
